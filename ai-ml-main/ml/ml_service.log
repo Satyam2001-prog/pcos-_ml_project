@@ -1,0 +1,74 @@
+2025-01-28 10:49:16,075 - INFO - Model trained and saved successfully
+2025-01-28 10:49:16,081 - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-01-28 10:49:16,081 - INFO -  * Running on http://172.31.17.1:5001/ (Press CTRL+C to quit)
+2025-01-28 11:09:29,203 - INFO - Model and scaler loaded successfully
+2025-01-28 11:09:29,209 - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-01-28 11:09:29,209 - INFO -  * Running on http://172.31.17.1:5001/ (Press CTRL+C to quit)
+2025-01-28 13:10:17,051 - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-01-28 13:10:17,051 - INFO -  * Running on http://172.31.17.1:5001/ (Press CTRL+C to quit)
+2025-01-28 13:11:28,815 - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-01-28 13:11:28,816 - INFO -  * Running on http://172.31.17.1:5001/ (Press CTRL+C to quit)
+2025-01-28 13:12:09,475 - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-01-28 13:12:09,475 - INFO -  * Running on http://172.31.17.1:5001/ (Press CTRL+C to quit)
+2025-01-28 13:14:12,222 - INFO - Received prediction request: {'age': 28, 'weight': 85, 'height': 165, 'cycle': 45, 'hairGrowth': True, 'skinDarkening': True, 'hairLoss': True, 'pimples': True}
+2025-01-28 13:14:12,222 - INFO - Prediction response: {'risk': 85, 'probability': 0.85, 'timestamp': '2025-01-28T13:14:12.222345', 'risk_level': 'High'}
+2025-01-28 13:14:12,223 - INFO - 127.0.0.1 - - [28/Jan/2025 13:14:12] "POST /predict HTTP/1.1" 200 -
+2025-01-28 13:14:24,282 - INFO - Received prediction request: {'age': 25, 'weight': 60, 'height': 165, 'cycle': 28, 'hairGrowth': False, 'skinDarkening': False, 'hairLoss': False, 'pimples': False}
+2025-01-28 13:14:24,282 - INFO - Prediction response: {'risk': 10, 'probability': 0.1, 'timestamp': '2025-01-28T13:14:24.282323', 'risk_level': 'Low'}
+2025-01-28 13:14:24,282 - INFO - 127.0.0.1 - - [28/Jan/2025 13:14:24] "POST /predict HTTP/1.1" 200 -
+2025-01-28 13:14:30,098 - INFO - Received prediction request: {'age': 25, 'weight': 60, 'height': 165, 'cycle': 28, 'hairGrowth': False, 'skinDarkening': False, 'hairLoss': False, 'pimples': False}
+2025-01-28 13:14:30,098 - INFO - Prediction response: {'risk': 10, 'probability': 0.1, 'timestamp': '2025-01-28T13:14:30.098394', 'risk_level': 'Low'}
+2025-01-28 13:14:30,098 - INFO - 127.0.0.1 - - [28/Jan/2025 13:14:30] "POST /predict HTTP/1.1" 200 -
+2025-01-28 13:15:29,554 - INFO - Received prediction request: {'age': '30', 'weight': '85', 'height': '105', 'cycle': '45', 'hairGrowth': True, 'skinDarkening': True, 'hairLoss': True, 'pimples': True}
+2025-01-28 13:15:29,554 - ERROR - Error processing request: unsupported operand type(s) for /: 'str' and 'int'
+2025-01-28 13:15:29,555 - INFO - 127.0.0.1 - - [28/Jan/2025 13:15:29] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-01-28 13:15:39,073 - INFO - Received prediction request: {'age': '30', 'weight': '85', 'height': '105', 'cycle': '45', 'hairGrowth': True, 'skinDarkening': False, 'hairLoss': True, 'pimples': False}
+2025-01-28 13:15:39,073 - ERROR - Error processing request: unsupported operand type(s) for /: 'str' and 'int'
+2025-01-28 13:15:39,074 - INFO - 127.0.0.1 - - [28/Jan/2025 13:15:39] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-01-28 13:17:03,664 - INFO - Received prediction request: {'age': 25, 'weight': 60, 'height': 165, 'cycle': 28, 'hairGrowth': False, 'skinDarkening': False, 'hairLoss': False, 'pimples': False, 'bmi': 22.04}
+2025-01-28 13:17:03,664 - INFO - Prediction response: {'risk': 10, 'probability': 0.1, 'timestamp': '2025-01-28T13:17:03.664563', 'risk_level': 'Low'}
+2025-01-28 13:17:03,665 - INFO - 127.0.0.1 - - [28/Jan/2025 13:17:03] "POST /predict HTTP/1.1" 200 -
+2025-01-28 13:17:07,261 - INFO - Received prediction request: {'age': 25, 'weight': 60, 'height': 165, 'cycle': 28, 'hairGrowth': False, 'skinDarkening': False, 'hairLoss': False, 'pimples': False, 'bmi': 22.04}
+2025-01-28 13:17:07,261 - INFO - Prediction response: {'risk': 10, 'probability': 0.1, 'timestamp': '2025-01-28T13:17:07.261309', 'risk_level': 'Low'}
+2025-01-28 13:17:07,261 - INFO - 127.0.0.1 - - [28/Jan/2025 13:17:07] "POST /predict HTTP/1.1" 200 -
+2025-01-28 13:17:15,261 - INFO - Received prediction request: {'age': 25, 'weight': 60, 'height': 165, 'cycle': 28, 'hairGrowth': False, 'skinDarkening': False, 'hairLoss': False, 'pimples': False, 'bmi': 22.04}
+2025-01-28 13:17:15,261 - INFO - Prediction response: {'risk': 10, 'probability': 0.1, 'timestamp': '2025-01-28T13:17:15.261410', 'risk_level': 'Low'}
+2025-01-28 13:17:15,261 - INFO - 127.0.0.1 - - [28/Jan/2025 13:17:15] "POST /predict HTTP/1.1" 200 -
+2025-01-28 13:17:18,427 - INFO - Received prediction request: {'age': '30', 'weight': '85', 'height': '105', 'cycle': '45', 'hairGrowth': True, 'skinDarkening': False, 'hairLoss': True, 'pimples': False, 'bmi': 77.1}
+2025-01-28 13:17:18,428 - ERROR - Error processing request: unsupported operand type(s) for /: 'str' and 'int'
+2025-01-28 13:17:18,428 - INFO - 127.0.0.1 - - [28/Jan/2025 13:17:18] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-01-28 13:18:16,573 - INFO - Received prediction request: {'age': 25, 'weight': 60, 'height': 165, 'cycle': 28, 'hairGrowth': False, 'skinDarkening': False, 'hairLoss': False, 'pimples': False, 'bmi': 22.04}
+2025-01-28 13:18:16,574 - INFO - Prediction response: {'risk': 10, 'probability': 0.1, 'timestamp': '2025-01-28T13:18:16.574062', 'risk_level': 'Low'}
+2025-01-28 13:18:16,574 - INFO - 127.0.0.1 - - [28/Jan/2025 13:18:16] "POST /predict HTTP/1.1" 200 -
+2025-01-28 13:18:26,091 - INFO - Received prediction request: {'age': 28, 'weight': 85, 'height': 165, 'cycle': 45, 'hairGrowth': True, 'skinDarkening': True, 'hairLoss': True, 'pimples': True, 'bmi': 31.22}
+2025-01-28 13:18:26,091 - INFO - Prediction response: {'risk': 85, 'probability': 0.85, 'timestamp': '2025-01-28T13:18:26.091804', 'risk_level': 'High'}
+2025-01-28 13:18:26,092 - INFO - 127.0.0.1 - - [28/Jan/2025 13:18:26] "POST /predict HTTP/1.1" 200 -
+2025-01-29 08:57:01,364 - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-01-29 08:57:01,364 - INFO -  * Running on http://172.31.17.1:5001/ (Press CTRL+C to quit)
+2025-01-29 08:59:14,680 - INFO - Received prediction request: {'age': 48, 'weight': 71, 'height': 158, 'cycle': 28, 'hairGrowth': False, 'skinDarkening': True, 'hairLoss': True, 'pimples': False, 'bmi': 28.44}
+2025-01-29 08:59:14,681 - INFO - Prediction response: {'risk': 40, 'probability': 0.4, 'timestamp': '2025-01-29T08:59:14.681059', 'risk_level': 'Low'}
+2025-01-29 08:59:14,681 - INFO - 127.0.0.1 - - [29/Jan/2025 08:59:14] "POST /predict HTTP/1.1" 200 -
+2025-01-29 09:01:44,248 - INFO - Received prediction request: {'age': 48, 'weight': 71, 'height': 158, 'cycle': 30, 'hairGrowth': False, 'skinDarkening': True, 'hairLoss': True, 'pimples': False, 'bmi': 28.44}
+2025-01-29 09:01:44,249 - INFO - Prediction response: {'risk': 40, 'probability': 0.4, 'timestamp': '2025-01-29T09:01:44.249034', 'risk_level': 'Low'}
+2025-01-29 09:01:44,249 - INFO - 127.0.0.1 - - [29/Jan/2025 09:01:44] "POST /predict HTTP/1.1" 200 -
+2025-01-29 09:01:53,405 - INFO - Received prediction request: {'age': 45, 'weight': 65, 'height': 158, 'cycle': 30, 'hairGrowth': False, 'skinDarkening': True, 'hairLoss': True, 'pimples': False, 'bmi': 26.04}
+2025-01-29 09:01:53,405 - INFO - Prediction response: {'risk': 50, 'probability': 0.5, 'timestamp': '2025-01-29T09:01:53.405763', 'risk_level': 'Medium'}
+2025-01-29 09:01:53,406 - INFO - 127.0.0.1 - - [29/Jan/2025 09:01:53] "POST /predict HTTP/1.1" 200 -
+2025-01-29 09:17:05,915 - INFO - Received prediction request: {'age': 25, 'weight': 73, 'height': 168, 'cycle': 28, 'hairGrowth': True, 'skinDarkening': True, 'hairLoss': True, 'pimples': True, 'bmi': 25.86}
+2025-01-29 09:17:05,915 - INFO - Prediction response: {'risk': 70, 'probability': 0.7, 'timestamp': '2025-01-29T09:17:05.915276', 'risk_level': 'Medium'}
+2025-01-29 09:17:05,915 - INFO - 127.0.0.1 - - [29/Jan/2025 09:17:05] "POST /predict HTTP/1.1" 200 -
+2025-01-29 09:45:30,633 - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-01-29 09:45:30,634 - INFO -  * Running on http://172.31.17.1:5001/ (Press CTRL+C to quit)
+2025-01-29 10:07:07,946 - INFO - Received prediction request: {'age': 34, 'weight': 61, 'height': 150, 'cycle': 28, 'hairGrowth': True, 'skinDarkening': True, 'hairLoss': False, 'pimples': True, 'bmi': 27.11}
+2025-01-29 10:07:07,947 - INFO - Prediction response: {'risk': 60, 'probability': 0.6, 'timestamp': '2025-01-29T10:07:07.947095', 'risk_level': 'Medium'}
+2025-01-29 10:07:07,947 - INFO - 127.0.0.1 - - [29/Jan/2025 10:07:07] "POST /predict HTTP/1.1" 200 -
+2025-01-29 10:19:57,809 - INFO - Received prediction request: {'age': 28, 'weight': 70, 'height': 160, 'cycle': 28, 'hairGrowth': False, 'skinDarkening': False, 'hairLoss': True, 'pimples': False, 'bmi': 27.34}
+2025-01-29 10:19:57,809 - INFO - Prediction response: {'risk': 40, 'probability': 0.4, 'timestamp': '2025-01-29T10:19:57.809290', 'risk_level': 'Low'}
+2025-01-29 10:19:57,809 - INFO - 127.0.0.1 - - [29/Jan/2025 10:19:57] "POST /predict HTTP/1.1" 200 -

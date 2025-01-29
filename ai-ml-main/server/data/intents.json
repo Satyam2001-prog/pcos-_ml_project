@@ -1,0 +1,100 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "hello", "hi", "hey", "good morning", "good evening",
+        "hi there", "hello there", "greetings"
+      ],
+      "responses": [
+        "Hello! I'm your PCOS assistant. How can I help you today?",
+        "Hi there! I'm here to help you understand PCOS better. What would you like to know?",
+        "Welcome! I can provide information about PCOS and help assess your symptoms. What questions do you have?"
+      ]
+    },
+    {
+      "tag": "pcos_definition",
+      "patterns": [
+        "what is pcos", "tell me about pcos", "explain pcos",
+        "define pcos", "pcos meaning", "what does pcos mean"
+      ],
+      "responses": [
+        "PCOS (Polycystic Ovary Syndrome) is a hormonal disorder common among women of reproductive age. It affects how the ovaries work and can cause irregular periods, excess androgen levels, and small cysts on the ovaries.",
+        "PCOS is a complex hormonal condition that affects about 1 in 10 women. It can impact various aspects of health, including fertility, metabolism, and appearance.",
+        "Polycystic Ovary Syndrome (PCOS) is a condition where the ovaries produce an abnormal amount of androgens, male sex hormones that are usually present in women in small amounts."
+      ]
+    },
+    {
+      "tag": "symptoms",
+      "patterns": [
+        "what are pcos symptoms", "pcos signs", "how do i know if i have pcos",
+        "symptoms of pcos", "pcos symptoms list", "common pcos symptoms"
+      ],
+      "responses": [
+        "Common PCOS symptoms include: irregular periods, excess facial and body hair, acne, weight gain, difficulty getting pregnant, thinning hair on the head, and dark skin patches.",
+        "Key signs of PCOS may include missed or irregular periods, excess androgens leading to acne and hair growth, weight management issues, and insulin resistance.",
+        "PCOS symptoms can vary but often include menstrual irregularities, fertility problems, excess hair growth, acne, and metabolic issues like insulin resistance."
+      ]
+    },
+    {
+      "tag": "treatment",
+      "patterns": [
+        "how to treat pcos", "pcos treatment", "cure for pcos",
+        "pcos medication", "how to manage pcos", "pcos management"
+      ],
+      "responses": [
+        "PCOS treatment typically includes lifestyle changes (healthy diet and regular exercise), medications to regulate periods and fertility treatments if pregnancy is desired. Treatment is tailored to your specific symptoms and goals.",
+        "While there's no cure for PCOS, it can be effectively managed through: 1) Lifestyle changes 2) Medications like birth control pills or anti-androgen medications 3) Regular monitoring and health screenings.",
+        "PCOS management often involves a combination of approaches: maintaining a healthy weight, regular exercise, medications as needed, and regular check-ups with your healthcare provider."
+      ]
+    },
+    {
+      "tag": "diet",
+      "patterns": [
+        "what to eat with pcos", "pcos diet", "food for pcos",
+        "diet recommendations for pcos", "pcos nutrition", "what foods help pcos"
+      ],
+      "responses": [
+        "A PCOS-friendly diet typically includes: 1) High-fiber foods 2) Lean proteins 3) Anti-inflammatory foods 4) Limited processed foods and sugars 5) Plenty of vegetables and fruits.",
+        "For PCOS management, focus on: whole grains, lean proteins, healthy fats, and lots of vegetables. Limit refined carbohydrates, sugary foods, and processed foods. Consider working with a registered dietitian.",
+        "Dietary recommendations for PCOS include: balancing carbohydrates with proteins, choosing low-glycemic foods, eating regular meals, and staying hydrated. This helps manage insulin levels and reduce symptoms."
+      ]
+    },
+    {
+      "tag": "exercise",
+      "patterns": [
+        "exercise for pcos", "pcos workout", "physical activity pcos",
+        "best exercises pcos", "how to exercise with pcos"
+      ],
+      "responses": [
+        "Regular exercise is crucial for PCOS management. Aim for: 1) 150 minutes of moderate exercise weekly 2) Mix of cardio and strength training 3) Activities you enjoy to maintain consistency.",
+        "Beneficial exercises for PCOS include: walking, swimming, cycling, strength training, and yoga. Start slowly and gradually increase intensity as your fitness improves.",
+        "Exercise helps PCOS by: improving insulin sensitivity, managing weight, reducing stress, and regulating hormones. Find activities you enjoy and make them part of your routine."
+      ]
+    },
+    {
+      "tag": "fertility",
+      "patterns": [
+        "pcos pregnancy", "can i get pregnant with pcos", "pcos fertility",
+        "conceiving with pcos", "pregnancy chances pcos"
+      ],
+      "responses": [
+        "While PCOS can affect fertility, many women with PCOS can and do get pregnant. Treatment options include lifestyle changes, fertility medications, and assisted reproductive technologies.",
+        "PCOS is one of the most common, but treatable causes of infertility. Working with a fertility specialist can help develop a personalized plan to improve your chances of conception.",
+        "Pregnancy with PCOS is possible with proper management. Treatment may include: ovulation induction medications, lifestyle changes, and sometimes assisted reproductive techniques."
+      ]
+    },
+    {
+      "tag": "emotional_support",
+      "patterns": [
+        "feeling stressed about pcos", "pcos anxiety", "coping with pcos",
+        "pcos depression", "emotional impact pcos"
+      ],
+      "responses": [
+        "It's normal to feel overwhelmed by PCOS. Consider joining support groups, talking to a mental health professional, and practicing stress-management techniques like meditation or yoga.",
+        "PCOS can affect emotional well-being. Remember you're not alone. Seek support from healthcare providers, counselors, and others with PCOS through support groups or online communities.",
+        "Managing PCOS can be challenging emotionally. Focus on self-care, seek professional support when needed, and connect with others who understand what you're going through."
+      ]
+    }
+  ]
+}
