@@ -28,11 +28,21 @@ export const sendMessage = async (message) => {
   try {  
     const chatHistory = getChatHistory();  
     const chat = model.startChat({ history: chatHistory });  
-  
+
+    const UserSymptoms=localStorage.getItem("User_Symptoms")
+    var ML_response=null;
+    var Prompt="talk in the context of PCOS hormonal diesease and use your thought process and responsd for users query";
+    if (UserSymptoms){
+          ML_response=localstorage.getItem("Ml_Model_Response")
+          prompt="talk in the context of what symptoms user has and the ML models response from the app and give your thought process regarding the users query"  
+     }
     // Generate response  
+    message= if UserSymptoms ? message+`User_symptoms:{UserSymptoms}`:message
+    message=if ML_response ? message+`ML_model_response:{ML_response}` :message
+    
     const result = await chat.sendMessage(message);  
     const response = await result.response.text();  
-  
+    
     // Update chat history  
     const updatedHistory = [  
       ...chatHistory,  
@@ -67,7 +77,10 @@ export const analyzeSymptoms = async (formData) => {
       headers: { 'Content-Type': 'application/json' },  
       body: JSON.stringify(processedData)  
     });  
-    const data = await response.json();  
+    const data = await response.json(); 
+    localStorage.setItem('User_Symptoms', JSON.stringify(processedData));
+    
+    localStorage.setItem('Ml_Model_Response', JSON.stringify(data));
     console.log('Analysis response:', data);  
     if (!response.ok) {  
       throw new Error(data.message || 'Analysis failed');  
