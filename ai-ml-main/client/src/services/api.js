@@ -24,6 +24,7 @@ const saveChatHistory = (history) => {
 };  
   
 // Function to send a message and get a response from Gemini API  
+// Function to send a message and get a response from Gemini API  
 export const sendMessage = async (message) => {  
   try {  
     const chatHistory = getChatHistory();  
@@ -38,16 +39,15 @@ export const sendMessage = async (message) => {
       prompt = "talk in the context of what symptoms the user has and the ML model's response from the app and give your thought process regarding the user's query";  
     }  
   
-    let chatContext = "";  
+    let chatContext = prompt;  
     if (userSymptoms) {  
-      chatContext += `User_symptoms: ${userSymptoms}\n\n`;  
+      chatContext += `\n\nUser_symptoms: ${userSymptoms}`;  
     }  
     if (mlResponse) {  
-      chatContext += `ML_model_response: ${mlResponse}\n\n`;  
+      chatContext += `\n\nML_model_response: ${mlResponse}`;  
     }  
       
-    chatContext += JSON.stringify(chatHistory);  
-    message = `${chatContext}\nuser_query: ${message}`;  
+    message = `${chatContext}\n\nuser_query: ${message}`;  
   
     const result = await chat.sendMessage(message);  
     const response = await result.response.text();  
