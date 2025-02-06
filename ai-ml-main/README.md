@@ -254,5 +254,5 @@ MIT License
 ## Acknowledgments
 - Medical information sources
 - Open source libraries
-- Contributors
+- Contributors                                                                                                                                                                                                                                                                                                                        ## the impact of prompt engineering techniques on the quality and relevance of chatbot responses, powered by the Gemini API. We explore how strategic prompt design and simulated learning can be applied to enhance the chatbot's ability to provide accurate and helpful information related to PCOS (Polycystic Ovary Syndrome). This is not true machine learning, but rather prompt refinement that improves the output.
 
