@@ -66,7 +66,28 @@ export const sendMessage = async (message) => {
     throw error;  
   }  
 };  
-  
+
+export const submitFeedback = async (chatId, feedback) => {
+  try {
+    const response = await fetch(`${API_URL}/feedback`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ chatId, feedback })
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Feedback submission failed');
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Feedback API Error:', error);
+    throw error;
+  }
+};
 // PCOS Analysis  
 export const analyzeSymptoms = async (formData) => {  
   try {  
