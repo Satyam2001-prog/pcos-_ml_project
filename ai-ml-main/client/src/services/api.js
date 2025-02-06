@@ -113,6 +113,10 @@ export const analyzeSymptoms = async (formData) => {
     });
 
     const data = await response.json();
+    
+    localStorage.setItem('User_Symptoms', JSON.stringify(processedData));
+    localStorage.setItem('Ml_Model_Response', JSON.stringify(data));
+    
     console.log('Analysis response:', data);
 
     if (!response.ok) {
