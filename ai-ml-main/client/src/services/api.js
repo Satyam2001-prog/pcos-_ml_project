@@ -1,27 +1,38 @@
 // client/src/services/api.js
 
-const API_URL = 'http://54.89.78.190:5000';  // Update with your EC2 IP
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
+// Initialize Gemini AI
+const API_KEY = "AIzaSyAeY8VVy8_rNI70lCpVnxqzBxkTc8XFUMQ"; // Replace with your Gemini API key
+const genAI = new GoogleGenerativeAI(API_KEY);
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+// PCOS-specific context
+const PCOS_CONTEXT = `You are an expert PCOS healthcare assistant. Provide accurate, evidence-based information about:
+- PCOS symptoms, diagnosis, and treatment
+- Lifestyle modifications and diet recommendations
+- Exercise guidelines and stress management
+- Fertility considerations and management strategies
+Keep responses focused on PCOS topics, clear, and encouraging.`;
 
 // Chat message handling
 export const sendMessage = async (message) => {
   try {
-    const response = await fetch(`${API_URL}/chat`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ message })
+    // Start a chat with the PCOS context
+    const chat = model.startChat({
+      history: [{ role: "user", parts: PCOS_CONTEXT }],
     });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.message || 'Chat failed');
-    }
+    // Send the user's message to Gemini
+    const result = await chat.sendMessage(message);
+    const response = await result.response.text();
 
-    const data = await response.json();
-    return data;
+    // Store the chat response in sessionStorage
+    sessionStorage.setItem("chatResponse", JSON.stringify(response));
+
+    return response;
   } catch (error) {
-    console.error('Chat API Error:', error);
+    console.error("Gemini API Error:", error);
     throw error;
   }
 };
@@ -29,8 +40,9 @@ export const sendMessage = async (message) => {
 // PCOS Analysis
 export const analyzeSymptoms = async (formData) => {
   try {
-    console.log('Sending analysis data:', formData);
+    console.log("Sending analysis data:", formData);
 
+    // Process form data
     const processedData = {
       age: Number(formData.age),
       weight: Number(formData.weight),
@@ -39,50 +51,54 @@ export const analyzeSymptoms = async (formData) => {
       hairGrowth: Boolean(formData.hairGrowth),
       skinDarkening: Boolean(formData.skinDarkening),
       hairLoss: Boolean(formData.hairLoss),
-      pimples: Boolean(formData.pimples)
+      pimples: Boolean(formData.pimples),
     };
 
-    const response = await fetch(`${API_URL}/analyze`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(processedData)
-    });
+    // Create a prompt for Gemini based on the form data
+    const prompt = `Analyze the following PCOS symptoms and provide recommendations:
+    - Age: ${processedData.age}
+    - Weight: ${processedData.weight}
+    - Height: ${processedData.height}
+    - Cycle: ${processedData.cycle}
+    - Hair Growth: ${processedData.hairGrowth}
+    - Skin Darkening: ${processedData.skinDarkening}
+    - Hair Loss: ${processedData.hairLoss}
+    - Pimples: ${processedData.pimples}`;
 
-    const data = await response.json();
-    console.log('Analysis response:', data);
+    // Send the prompt to Gemini
+    const result = await model.generateContent(prompt);
+    const response = await result.response.text();
 
-    if (!response.ok) {
-      throw new Error(data.message || 'Analysis failed');
-    }
+    // Store the analysis response in sessionStorage
+    sessionStorage.setItem("analysisResponse", JSON.stringify(response));
 
-    return data;
+    return response;
   } catch (error) {
-    console.error('Analysis API Error:', error);
+    console.error("Gemini API Error:", error);
     throw error;
   }
 };
 
-// Feedback submission
+// Feedback submission (optional, if you still want to use it)
 export const submitFeedback = async (chatId, feedback) => {
   try {
+    // You can still send feedback to your server if needed
     const response = await fetch(`${API_URL}/feedback`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ chatId, feedback })
+      body: JSON.stringify({ chatId, feedback }),
     });
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(errorData.message || 'Feedback submission failed');
+      throw new Error(errorData.message || "Feedback submission failed");
     }
 
     return await response.json();
   } catch (error) {
-    console.error('Feedback API Error:', error);
+    console.error("Feedback API Error:", error);
     throw error;
   }
 };
