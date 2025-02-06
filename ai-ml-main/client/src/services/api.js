@@ -89,19 +89,39 @@ export const submitFeedback = async (chatId, feedback) => {
   }
 };
 // PCOS Analysis  
-export const analyzeSymptoms = async (formData) => {  
-  try {  
-    console.log('Sending analysis data:', formData);  
-    const processedData = {  
-      age: Number(formData.age),  
-      weight: Number(formData.weight),  
-      height: Number(formData.height),  
-      cycle: Number(formData.cycle),  
-      hairGrowth: Boolean(formData.hairGrowth),  
-      skinDarkening: Boolean(formData.skinDarkening),  
-      hairLoss: Boolean(formData.hairLoss),  
-      pimples: Boolean(formData.pimples)  
-    };  
-    const response = await fetch(`${API_URL}/analyze`, {  
-      method: 'POST',  
-      headers: { 'Content-Type': 'application
+export const analyzeSymptoms = async (formData) => {
+  try {
+    console.log('Sending analysis data:', formData);
+
+    const processedData = {
+      age: Number(formData.age),
+      weight: Number(formData.weight),
+      height: Number(formData.height),
+      cycle: Number(formData.cycle),
+      hairGrowth: Boolean(formData.hairGrowth),
+      skinDarkening: Boolean(formData.skinDarkening),
+      hairLoss: Boolean(formData.hairLoss),
+      pimples: Boolean(formData.pimples)
+    };
+
+    const response = await fetch(`${API_URL}/analyze`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(processedData)
+    });
+
+    const data = await response.json();
+    console.log('Analysis response:', data);
+
+    if (!response.ok) {
+      throw new Error(data.message || 'Analysis failed');
+    }
+
+    return data;
+  } catch (error) {
+    console.error('Analysis API Error:', error);
+    throw error;
+  }
+};
