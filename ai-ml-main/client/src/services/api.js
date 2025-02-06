@@ -1,6 +1,6 @@
 // client/src/services/api.js  
 import { GoogleGenerativeAI } from '@google/generative-ai';  
-  
+const API_URL = 'http://54.89.78.190:5000';
 const API_KEY = "AIzaSyAeY8VVy8_rNI70lCpVnxqzBxkTc8XFUMQ";  
 const genAI = new GoogleGenerativeAI(API_KEY);  
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });  
