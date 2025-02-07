@@ -268,5 +268,3 @@ const PCOSAnalysis = () => {
     </Card>
   );
 };
-
-export default PCOSAnalysis;
